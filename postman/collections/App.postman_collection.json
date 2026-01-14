@@ -1,0 +1,117 @@
+{
+  "info": {
+    "_postman_id": "05fcce81-0242-4817-ae12-b8ccf80162b7",
+    "name": "App",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "index",
+      "id": "0b7cbf94-efb6-48e7-aa7b-253173a33484",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}",
+          "host": [
+            "{{base_url}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "register",
+      "id": "5e7a1a6b-fb9e-4ced-89e9-682198fe2669",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\" : \"admin2@gmail.com\",\n    \"name\" : \"Admin\",\n    \"password\" : \"asdffdsa\",\n    \"password_confirmation\" : \"asdffdsa\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/register",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "id": "25b0f826-82bd-4e17-aa71-dcb7bf9d3288",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\" : \"admin2@gmail.com\",\n    \"password\" : \"asdffdsa\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/login",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "login"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "b6f52328-3cee-4bf4-b757-c153fbdc2f75",
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "966f58a0-3329-4341-a732-85e5796562cd",
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "id": "ecc401d6-cb80-4bcd-9410-3f764b16f760",
+      "key": "base_url",
+      "value": ""
+    },
+    {
+      "id": "e1c0ecd4-7854-404d-8b72-95e1aebf9ff0",
+      "key": "base_url",
+      "value": "",
+      "disabled": true
+    }
+  ]
+}
