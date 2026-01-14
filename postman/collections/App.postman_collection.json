@@ -75,43 +75,16 @@
       "response": []
     }
   ],
-  "event": [
-    {
-      "listen": "prerequest",
-      "script": {
-        "id": "b6f52328-3cee-4bf4-b757-c153fbdc2f75",
-        "type": "text/javascript",
-        "packages": {},
-        "requests": {},
-        "exec": [
-          ""
-        ]
-      }
-    },
-    {
-      "listen": "test",
-      "script": {
-        "id": "966f58a0-3329-4341-a732-85e5796562cd",
-        "type": "text/javascript",
-        "packages": {},
-        "requests": {},
-        "exec": [
-          ""
-        ]
-      }
-    }
-  ],
   "variable": [
     {
-      "id": "ecc401d6-cb80-4bcd-9410-3f764b16f760",
+      "id": "3f4ae451-20d1-4377-869b-3d3c390fa82c",
       "key": "base_url",
       "value": ""
     },
     {
-      "id": "e1c0ecd4-7854-404d-8b72-95e1aebf9ff0",
+      "id": "82067ed4-04dc-4fcd-9155-d7364643c1be",
       "key": "base_url",
-      "value": "",
-      "disabled": true
+      "value": ""
     }
   ]
 }
