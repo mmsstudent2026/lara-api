@@ -6,15 +6,48 @@ use App\Http\Requests\StoreCustomerRequest;
 use App\Http\Requests\UpdateCustomerRequest;
 use App\Http\Resources\CustomerResource;
 use App\Models\Customer;
+use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $customers = Customer::all();
+        $query = Customer::query();
+
+        // search function
+        $keyword = $request->get("q");
+        $query->where(function ($q) use ($keyword) {
+            $q->where('name', 'like', "%{$keyword}%")
+                ->orWhere('phone', 'like', "%{$keyword}%")
+                ->orWhere('township', 'like', "%{$keyword}%")
+                ->orWhere('state_division', 'like', "%{$keyword}%")
+                ->orWhere('year', 'like', "%{$keyword}%");
+        });
+
+        // filter
+        $filterByStateDivision = $request->get("filter_by_state_division");
+        if ($filterByStateDivision) {
+            $query->where("state_division", $filterByStateDivision);
+        }
+
+        $filterByTownship = $request->get("filter_by_township");
+        if ($filterByTownship) {
+            $query->where("township", $filterByTownship);
+        }
+
+
+
+        // order
+        $sortBy = $request->get("sort_by") ?? "id";
+        $sortDirection = $request->get("sort_direction") ?? "desc";
+        $query->orderBy($sortBy, $sortDirection);
+
+        // paginate
+        $customers = $query->paginate(7);
+
         return CustomerResource::collection($customers);
     }
 
