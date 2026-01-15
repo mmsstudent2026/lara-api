@@ -6,6 +6,189 @@
   },
   "item": [
     {
+      "name": "dashboard",
+      "item": [
+        {
+          "name": "customer",
+          "item": [
+            {
+              "name": "index",
+              "id": "dcb4cf31-8150-4ee7-b0f7-fe8e9e531991",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/customer",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "customer"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "Hlaing",
+                      "uuid": "40e1b45a-608f-4c01-9bf6-294bd658365d",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "name",
+                      "uuid": "9d592077-0cfd-467c-9bb4-565fa8ca3506",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sort_direction",
+                      "value": "asc",
+                      "uuid": "5ba7116f-1c82-4d69-a49a-c2ac0e33dc42",
+                      "disabled": true
+                    },
+                    {
+                      "key": "filter_by_state_division",
+                      "value": "yangon",
+                      "uuid": "0e2cce3a-1c9f-4d81-855d-f9cb931ae23c",
+                      "disabled": true
+                    },
+                    {
+                      "key": "filter_by_township",
+                      "value": "hlaing",
+                      "uuid": "7459a2ea-95da-4353-9e7f-d7b2176be029",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "store",
+              "id": "f6360963-6e10-43b8-a4e4-93a88a3034e5",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Aung Min Htet\",\n    \"year\": 1994,\n    \"phone\": \"094209898456\",\n    \"email\": \"aungminhtet@gmail.com\",\n    \"township\": \"Hlaing\",\n    \"state_division\": \"Yangon\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/customer",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "customer"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "show",
+              "id": "cdba7b7e-bc8a-4a22-ad7c-10b99fd7d8cb",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/customer/10",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "customer",
+                    "10"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "destroy",
+              "id": "111f8c3d-1887-4136-8413-400e5cf0195a",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/customer/10",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "customer",
+                    "10"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "id": "f1933741-1c53-43c2-95f8-7a76c95969c2",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Aung Min Htet\",\n    \"year\": 1994,\n    \"phone\": \"0942009999\",\n    \"email\": \"aungminhtet@gmail.com\",\n    \"township\": \"Hlaing\",\n    \"state_division\": \"Yangon\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/customer/9",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "customer",
+                    "9"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update-partial",
+              "id": "74224018-7a11-4c05-946d-746a3793fc78",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"phone\": \"0912423423423\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/customer/19",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "customer",
+                    "19"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "436fea9d-05ec-4da6-a290-45f73e2150bd"
+        }
+      ],
+      "id": "69705568-2506-47bd-b8eb-359cab24cd36"
+    },
+    {
       "name": "index",
       "id": "0b7cbf94-efb6-48e7-aa7b-253173a33484",
       "request": {
@@ -75,15 +258,30 @@
       "response": []
     }
   ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
   "variable": [
     {
-      "id": "3f4ae451-20d1-4377-869b-3d3c390fa82c",
+      "id": "d72b088d-7ef2-43d3-86cd-03fa6f7d1959",
       "key": "base_url",
       "value": ""
     },
     {
-      "id": "82067ed4-04dc-4fcd-9155-d7364643c1be",
+      "id": "47237510-2a02-4fa1-afc6-cb968a9589b9",
       "key": "base_url",
+      "value": ""
+    },
+    {
+      "id": "87a62106-4d59-44e4-9c5c-77bc20c24a2e",
+      "key": "token",
       "value": ""
     }
   ]
