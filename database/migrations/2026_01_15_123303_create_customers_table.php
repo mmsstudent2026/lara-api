@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('township')->nullable();
             $table->string('state_division')->nullable();
+            $table->foreignId("user_id");
             $table->timestamps();
         });
     }

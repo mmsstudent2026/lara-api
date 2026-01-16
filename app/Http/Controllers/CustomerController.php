@@ -7,14 +7,22 @@ use App\Http\Requests\UpdateCustomerRequest;
 use App\Http\Resources\CustomerResource;
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class CustomerController extends Controller
 {
+
+    public function __construct() {}
+
     /**
      * Display a listing of the resource.
      */
     public function index(Request $request)
     {
+
+        // Gate::authorize('viewAny', Customer::class);
+
         $query = Customer::query();
 
         // search function
@@ -29,6 +37,9 @@ class CustomerController extends Controller
 
 
         // must filter
+        $query->when(Auth::id() != 1, function ($query) {
+            $query->where("user_id", Auth::id());
+        });
 
 
         // filter
@@ -49,6 +60,9 @@ class CustomerController extends Controller
         $sortDirection = $request->get("sort_direction") ?? "desc";
         $query->orderBy($sortBy, $sortDirection);
 
+        // with
+        // $query->with('user');
+
         // paginate
         $customers = $query->paginate(7);
 
@@ -60,7 +74,9 @@ class CustomerController extends Controller
      */
     public function store(StoreCustomerRequest $request)
     {
-        $customer = Customer::create($request->validated());
+        // Gate::authorize("create", Customer::class);
+
+        $customer = Customer::create([...$request->validated(), "user_id" => Auth::id()]);
 
         return new CustomerResource($customer);
     }
@@ -70,6 +86,8 @@ class CustomerController extends Controller
      */
     public function show(Customer $customer)
     {
+        Gate::authorize('view', $customer);
+
         return new CustomerResource($customer);
     }
 
@@ -78,6 +96,9 @@ class CustomerController extends Controller
      */
     public function update(UpdateCustomerRequest $request, Customer $customer)
     {
+
+        Gate::authorize('update', $customer);
+
         // Only validated fields will be updated (partial update supported)
         $customer->update($request->validated());
 
@@ -89,6 +110,9 @@ class CustomerController extends Controller
      */
     public function destroy(Customer $customer)
     {
+
+        Gate::authorize('delete', $customer);
+
         $customer->delete();
 
         return response()->json([

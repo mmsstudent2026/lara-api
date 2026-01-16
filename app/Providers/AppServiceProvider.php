@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -22,5 +24,14 @@ class AppServiceProvider extends ServiceProvider
         if (!app()->environment('local')) {
             $this->app['request']->server->set('HTTPS', 'on');
         }
+
+
+        DB::listen(function ($query) {
+            Log::info('SQL', [
+                'query' => $query->sql,
+                'bindings' => $query->bindings,
+                'time_ms' => $query->time,
+            ]);
+        });
     }
 }

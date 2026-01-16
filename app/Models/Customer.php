@@ -17,5 +17,15 @@ class Customer extends Model
         'email',
         'township',
         'state_division',
+        'user_id'
     ];
+
+
+    protected $with = ['user'];
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
