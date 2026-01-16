@@ -27,6 +27,10 @@ class CustomerController extends Controller
                 ->orWhere('year', 'like', "%{$keyword}%");
         });
 
+
+        // must filter
+
+
         // filter
         $filterByStateDivision = $request->get("filter_by_state_division");
         if ($filterByStateDivision) {
