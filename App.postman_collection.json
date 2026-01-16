@@ -1,436 +1,403 @@
 {
-	"info": {
-		"_postman_id": "05fcce81-0242-4817-ae12-b8ccf80162b7",
-		"name": "App",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "44563354",
-		"_collection_link": "https://mmsit.postman.co/workspace/8d5dfd73-1abe-487a-a212-e672522fb22a/collection/44563354-05fcce81-0242-4817-ae12-b8ccf80162b7?action=share&source=collection_link&creator=44563354"
-	},
-	"item": [
-		{
-			"name": "dashboard",
-			"item": [
-				{
-					"name": "customer",
-					"item": [
-						{
-							"name": "index",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/customer",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"customer"
-									],
-									"query": [
-										{
-											"key": "q",
-											"value": "Hlaing",
-											"disabled": true
-										},
-										{
-											"key": "sort_by",
-											"value": "name",
-											"disabled": true
-										},
-										{
-											"key": "sort_direction",
-											"value": "asc",
-											"disabled": true
-										},
-										{
-											"key": "filter_by_state_division",
-											"value": "yangon",
-											"disabled": true
-										},
-										{
-											"key": "filter_by_township",
-											"value": "hlaing",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "store",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"name\": \"Aung Min Htet\",\n    \"year\": 1994,\n    \"phone\": \"094209898456\",\n    \"email\": \"aungminhtet@gmail.com\",\n    \"township\": \"Hlaing\",\n    \"state_division\": \"Yangon\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{base_url}}/customer",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"customer"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "show",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/customer/10",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"customer",
-										"10"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "destroy",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/customer/10",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"customer",
-										"10"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "update",
-							"request": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"name\": \"Aung Min Htet\",\n    \"year\": 1994,\n    \"phone\": \"0942009999\",\n    \"email\": \"aungminhtet@gmail.com\",\n    \"township\": \"Hlaing\",\n    \"state_division\": \"Yangon\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{base_url}}/customer/9",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"customer",
-										"9"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "update-partial",
-							"request": {
-								"method": "PATCH",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"phone\": \"0912423423423\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{base_url}}/customer/19",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"customer",
-										"19"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "customer",
-					"item": [
-						{
-							"name": "index",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/customer",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"customer"
-									],
-									"query": [
-										{
-											"key": "q",
-											"value": "Hlaing",
-											"disabled": true
-										},
-										{
-											"key": "sort_by",
-											"value": "name",
-											"disabled": true
-										},
-										{
-											"key": "sort_direction",
-											"value": "asc",
-											"disabled": true
-										},
-										{
-											"key": "filter_by_state_division",
-											"value": "yangon",
-											"disabled": true
-										},
-										{
-											"key": "filter_by_township",
-											"value": "hlaing",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "store",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"name\": \"Aung Min Htet\",\n    \"year\": 1994,\n    \"phone\": \"094209898456\",\n    \"email\": \"aungminhtet@gmail.com\",\n    \"township\": \"Hlaing\",\n    \"state_division\": \"Yangon\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{base_url}}/customer",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"customer"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "show",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/customer/10",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"customer",
-										"10"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "destroy",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}/customer/10",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"customer",
-										"10"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "update",
-							"request": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"name\": \"Aung Min Htet\",\n    \"year\": 1994,\n    \"phone\": \"0942009999\",\n    \"email\": \"aungminhtet@gmail.com\",\n    \"township\": \"Hlaing\",\n    \"state_division\": \"Yangon\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{base_url}}/customer/9",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"customer",
-										"9"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "update-partial",
-							"request": {
-								"method": "PATCH",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"phone\": \"0912423423423\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{base_url}}/customer/19",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"customer",
-										"19"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				}
-			]
-		},
-		{
-			"name": "index",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{base_url}}",
-					"host": [
-						"{{base_url}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "register",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"email\" : \"admin2@gmail.com\",\n    \"name\" : \"Admin\",\n    \"password\" : \"asdffdsa\",\n    \"password_confirmation\" : \"asdffdsa\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{base_url}}/register",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"register"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "login",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"email\" : \"admin2@gmail.com\",\n    \"password\" : \"asdffdsa\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{base_url}}/login",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"login"
-					]
-				}
-			},
-			"response": []
-		}
-	],
-	"auth": {
-		"type": "bearer",
-		"bearer": [
-			{
-				"key": "token",
-				"value": "{{token}}",
-				"type": "string"
-			}
-		]
-	},
-	"variable": [
-		{
-			"key": "base_url",
-			"value": ""
-		},
-		{
-			"key": "base_url",
-			"value": ""
-		},
-		{
-			"key": "token",
-			"value": ""
-		}
-	]
+  "info": {
+    "_postman_id": "05fcce81-0242-4817-ae12-b8ccf80162b7",
+    "name": "App",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "44563354",
+    "_collection_link": "https://go.postman.co/collection/44563354-05fcce81-0242-4817-ae12-b8ccf80162b7?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "dashboard",
+      "item": [
+        {
+          "name": "customer",
+          "item": [
+            {
+              "name": "index",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/customer",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "customer"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "Hlaing",
+                      "uuid": "40e1b45a-608f-4c01-9bf6-294bd658365d",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "name",
+                      "uuid": "9d592077-0cfd-467c-9bb4-565fa8ca3506",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sort_direction",
+                      "value": "asc",
+                      "uuid": "5ba7116f-1c82-4d69-a49a-c2ac0e33dc42",
+                      "disabled": true
+                    },
+                    {
+                      "key": "filter_by_state_division",
+                      "value": "yangon",
+                      "uuid": "0e2cce3a-1c9f-4d81-855d-f9cb931ae23c",
+                      "disabled": true
+                    },
+                    {
+                      "key": "filter_by_township",
+                      "value": "hlaing",
+                      "uuid": "7459a2ea-95da-4353-9e7f-d7b2176be029",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "store",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Aung M\",\n    \"year\": 1994,\n    \"phone\": \"094203932356\",\n    \"email\": \"aungminhtet@gmail.com\",\n    \"township\": \"Hlaing\",\n    \"state_division\": \"Yangon\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/customer",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "customer"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "show",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/customer/5",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "customer",
+                    "5"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "destroy",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/customer/26",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "customer",
+                    "26"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Aung Htet\",\n    \"year\": 1994,\n    \"phone\": \"09420089999\",\n    \"email\": \"aungminhtet@gmail.com\",\n    \"township\": \"Hlaing\",\n    \"state_division\": \"Yangon\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/customer/26",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "customer",
+                    "26"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update-partial",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"phone\": \"0912423323\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/customer/10",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "customer",
+                    "10"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "user-profile",
+          "item": [
+            {
+              "name": "show",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\" : \"admin@gmail.com\",\n    \"password\" : \"asdffdsa\"\n}"
+                },
+                "url": {
+                  "raw": "{{base_url}}/user-profile/show",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "user-profile",
+                    "show"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "change-name",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\" : \"Aung Aung\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/user-profile/change-name",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "user-profile",
+                    "change-name"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "change-password",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"old_password\" : \"asdffdsa\",\n    \"new_password\": \"heinhtetzan\",\n    \"new_password_confirmation\": \"heinhtetzan\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/user-profile/change-password",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "user-profile",
+                    "change-password"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "logout",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/user-profile/logout",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "user-profile",
+                    "logout"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "index",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}",
+          "host": [
+            "{{base_url}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\" : \"hhz@gmail.com\",\n    \"name\" : \"Hein Htet Zan\",\n    \"password\" : \"asdffdsa\",\n    \"password_confirmation\" : \"asdffdsa\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/register",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\" : \"admin@gmail.com\",\n    \"password\" : \"asdffdsa\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/login",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "login"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": ""
+    },
+    {
+      "key": "base_url",
+      "value": "",
+      "disabled": true
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ]
 }

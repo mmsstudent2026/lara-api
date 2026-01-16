@@ -26,12 +26,14 @@ class AppServiceProvider extends ServiceProvider
         }
 
 
-        DB::listen(function ($query) {
-            Log::info('SQL', [
-                'query' => $query->sql,
-                'bindings' => $query->bindings,
-                'time_ms' => $query->time,
-            ]);
-        });
+        // if (app()->environment('local')) {
+        //     DB::listen(function ($query) {
+        //         Log::info('SQL', [
+        //             'query' => $query->sql,
+        //             'bindings' => $query->bindings,
+        //             'time_ms' => $query->time,
+        //         ]);
+        //     });
+        // }
     }
 }
