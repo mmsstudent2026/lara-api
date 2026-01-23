@@ -12,7 +12,7 @@ class UserObserver
      */
     public function created(User $user): void
     {
-        SendWelcomeEmailJob::dispatch($user)->delay(15);
+        SendWelcomeEmailJob::dispatch($user)->delay(now()->addSeconds(15));
     }
 
     /**
